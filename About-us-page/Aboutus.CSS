@@ -1,0 +1,835 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600;700&display=swap");
+
+:root {
+  --primary-color: #ff9a30;
+  --text-dark: #0a0a0a;
+  --white: #ffffff;
+  --max-width: 1200px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  outline: none;
+  border: none;
+  font-size: 1rem;
+  color: var(--white);
+  background-color: var(--primary-color);
+  border-radius: 5px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: rgba(255, 154, 48, 0.8);
+}
+
+img {
+  display: flex;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.header {
+  position: relative;
+  isolation: isolate;
+}
+
+nav {
+  position: absolute;
+  width: 100%;
+  max-width: var(--max-width);
+  top: 0;
+  left: 50%;
+  transform: translate(-50%);
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 9;
+}
+
+.nav__logo a img {
+  max-width: 80px;
+}
+
+.nav__logo .logo-color {
+  display: none;
+}
+
+.nav__links {
+  list-style: none;
+  position: absolute;
+  right: 1rem;
+  top: 75px;
+  width: 100%;
+  max-width: 350px;
+  padding: 2rem;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex-direction: column;
+  background-color: var(--primary-color);
+  border-radius: 1rem;
+  display: none;
+}
+
+.nav__links.open {
+  display: flex;
+}
+
+.nav__links a {
+  white-space: nowrap;
+  font-weight: 500;
+  color: var(--text-dark);
+}
+
+.nav__links a:hover {
+  color: var(--white);
+}
+
+.nav__menu__btn {
+  padding: 5px 11px;
+  font-size: 1.5rem;
+  color: var(--white);
+  background-color: rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--white);
+  border-radius: 5px;
+}
+
+.header__container {
+  display: grid;
+}
+
+.header__image {
+  position: relative;
+  isolation: isolate;
+  min-height: max(75vh, 500px);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-bottom-left-radius: 8rem;
+}
+
+.header__image::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  background-color: var(--primary-color);
+  z-index: 1;
+  animation: scroll-right 0.5s 0.3s linear forwards;
+}
+
+.header__image.reveal {
+  background-image: url("header.1.png");
+}
+
+.header__image.reveal::after {
+  left: unset;
+  right: 0;
+  animation: scroll-left 0.5s linear forwards;
+}
+
+@keyframes scroll-right {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes scroll-left {
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+.header__content {
+  text-align: center;
+  padding: 4rem 1rem;
+}
+
+.header__content h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 3rem;
+  color: var(--text-dark);
+}
+
+.header__content h2 {
+  margin-bottom: 2rem;
+  font-size: 4rem;
+  font-weight: 200;
+  line-height: 3rem;
+  color: var(--text-dark);
+}
+
+.header__content p {
+  margin-bottom: 2rem;
+  color: var(--text-dark);
+}
+
+.banner {
+  margin-top: 5rem;
+  display: grid;
+}
+
+.banner__card {
+  padding: 2rem;
+}
+
+.banner__card:nth-child(1) {
+  position: relative;
+  isolation: isolate;
+  padding-block: 5rem;
+  background-color: #ffd457;
+}
+
+.banner__card:nth-child(2) {
+  background-color: #ffd457;
+}
+
+.banner__card:nth-child(3) {
+  background-color: #ffc823;
+}
+
+.banner__card:nth-child(4) {
+  background-color: #ffad23;
+}
+
+.banner__card h4 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--text-dark);
+}
+
+.banner__card p {
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--text-dark);
+}
+
+.banner__card a {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.banner__content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: calc(100% + 4rem);
+  width: 100%;
+  padding-top: 4rem;
+  padding-right: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 1;
+  background-color: var(--primary-color);
+  border-top-right-radius: 100%;
+}
+
+.banner__content h2 {
+  font-size: 6rem;
+  font-weight: 700;
+  line-height: 5rem;
+  color: var(--text-dark);
+}
+
+.banner__content p {
+  font-weight: 500;
+  color: var(--text-dark);
+}
+
+.banner__content h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+@media (width > 540px) {
+  .header__image {
+    min-height: max(75vh, 550px);
+  }
+
+  .banner {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (width > 768px) {
+  nav {
+    padding: 2rem 1rem;
+  }
+
+  .nav__logo .logo-color {
+    display: flex;
+  }
+
+  .nav__logo .logo-white {
+    display: none;
+  }
+
+  .nav__menu__btn {
+    display: none;
+  }
+
+  .nav__links {
+    padding: 0.75rem 3rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    gap: 3rem;
+    flex-direction: row;
+    max-width: fit-content;
+    border-radius: 5rem;
+    background-color: rgba(255, 154, 48, 0.8);
+  }
+
+  .header__container {
+    display: grid;
+    grid-template-columns:
+      minmax(1rem, 1fr)
+      minmax(0, calc(var(--max-width) * 0.4))
+      minmax(0, calc(var(--max-width) * 0.6))
+      minmax(1rem, 1fr);
+    align-items: center;
+  }
+
+  .header__image {
+    min-height: max(75vh, 650px);
+    grid-area: 1/3/2/5;
+  }
+
+  .header__content {
+    text-align: left;
+    padding-top: 10rem;
+    grid-column: 2/3;
+  }
+
+  .header__content h1 {
+    font-size: 5rem;
+    line-height: 4rem;
+  }
+
+  .header__content h2 {
+    font-size: 5rem;
+    line-height: 4rem;
+  }
+
+  .banner {
+    display: grid;
+    grid-template-columns:
+      minmax(1rem, 1fr)
+      minmax(0, calc(var(--max-width) / 4))
+      minmax(0, calc(var(--max-width) / 4))
+      minmax(0, calc(var(--max-width) / 4))
+      minmax(0, calc(var(--max-width) / 4))
+      minmax(1rem, 1fr);
+    background-color: #ffad23;
+  }
+
+  .banner__card:nth-child(1) {
+    grid-column: 1/3;
+  }
+}
+
+@media (width > 1024px) {
+  .nav__links {
+    padding: 0.75rem 4rem;
+    gap: 4rem;
+  }
+}
+/* Styling the employee spotlight section */
+.employee-spotlight-section {
+  padding: 50px 0;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+/* Styling the employee grid */
+.employee-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Styling the employee profile */
+.employee-profile {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.employee-profile img {
+  width: 100%;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+.employee-info h3 {
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.employee-info p {
+  margin-bottom: 5px;
+  font-size: 16px;
+}
+
+/* Styling the call-to-action button */
+.cta-button {
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #ff5733;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #ff824a;
+}
+/* Styling the sustainability section */
+.sustainability-section {
+  padding: 50px 0;
+  background-color: #f3f3f3;
+}
+
+/* Styling the content */
+.content {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.content h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.content p {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+/* Styling the visuals */
+.visuals img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 30px;
+}
+
+/* Styling the data visualization */
+.data-visualization {
+  margin-bottom: 30px;
+}
+
+/* Styling the information */
+.information p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+/* Styling the destination highlights section */
+.destination-highlights-section {
+  padding: 50px 0;
+}
+
+/* Styling the destination grid */
+.destination-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+/* Styling the destination box */
+.destination-box {
+  display: flex;
+  flex-direction: column;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling the destination info */
+.destination-info {
+  padding: 20px;
+}
+
+.destination-info h3 {
+  margin-bottom: 10px;
+}
+
+.destination-info p {
+  margin-bottom: 20px;
+}
+
+/* Styling the destination image */
+.destination-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Styling the call-to-action button */
+.cta-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #ff5733;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  text-align: center;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #ff824a;
+}
+
+/* Styling for Emirates Experience Highlights section */
+.emirates-experience-highlights-section {
+  padding: 50px 0;
+}
+
+/* Styling for container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+/* Styling for image box */
+.image-box {
+  flex: 1;
+  margin-right: 20px;
+}
+
+/* Styling for image carousel */
+.image-carousel {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+}
+
+.image-carousel img {
+  flex: 0 0 auto;
+  width: 300px; /* Adjust image width as needed */
+  height: auto;
+  margin-right: 10px;
+  scroll-snap-align: start;
+  border-radius: 10px;
+}
+
+/* Styling for text box */
+.text-box {
+  flex: 1;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+}
+
+/* Styling for highlight */
+.highlight h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* Styling for About Us section */
+.about-us-section {
+  padding: 50px 0;
+  text-align: center;
+}
+
+/* Styling for container */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Styling for section title */
+.section-title {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.section {
+  text-align: center;
+  padding: 50px 0;
+}
+
+.image-container {
+  display: inline-block;
+  position: relative;
+  width: 30%;
+  margin: 0 15px;
+  overflow: hidden;
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.5s;
+}
+
+.image-container:hover img {
+  transform: scale(1.1);
+}
+
+.image-text {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 10px;
+  box-sizing: border-box;
+  transition: opacity 0.5s;
+  opacity: 0;
+}
+
+.image-container:hover .image-text {
+  opacity: 1;
+}
+
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #why-choose-emirates {
+      padding: var(--sectionPadding);
+      background-color: #F3F3F4;
+      overflow: hidden;
+      position: relative;
+      z-index: 1;
+  }
+  #why-choose-emirates .cs-container {
+      width: 100%;
+      max-width: 36.5rem;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: clamp(3rem, 10vw, 6.25rem);
+  }
+  #why-choose-emirates .cs-content {
+      text-align: left;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+  }
+  #why-choose-emirates .cs-flex {
+      max-width: 38.5rem;
+  }
+  #why-choose-emirates .cs-title {
+      max-width: 20ch;
+      margin-bottom: 1.5rem;
+  }
+  #why-choose-emirates .cs-ul {
+      width: 100%;
+      max-width: 32.625rem;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: clamp(1.75rem, 3vw, 2rem);
+  }
+  #why-choose-emirates .cs-li {
+      list-style: none;
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 1rem;
+  }
+  #why-choose-emirates .cs-number {
+      font-size: 1.25rem;
+      line-height: 1.2em;
+      font-weight: 700;
+      margin: 0;
+      color: var(--primary);
+      display: block;
+  }
+  #why-choose-emirates .cs-li-text {
+      font-size: clamp(0.875rem, 1.5vw, 1rem);
+      line-height: 1.5em;
+      margin: 0;
+      color: var(--bodyTextColor);
+  }
+  #why-choose-emirates .cs-wrapper {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: clamp(2.5rem, 6vw, 4rem);
+      position: relative;
+      z-index: 1;
+  }
+  #why-choose-emirates .cs-wrapper:before {
+      content: '';
+      width: 100vw;
+      height: 500%;
+      background: #fff;
+      opacity: 1;
+      position: absolute;
+      display: block;
+      top: clamp(2.5rem, 10vw, 8.75rem);
+      left: 50%;
+      z-index: -1;
+      transform: translateX(-50%);
+  }
+  #why-choose-emirates .cs-picture {
+      width: 100%;
+      height: 70vw;
+      max-height: 25rem;
+      display: block;
+      position: relative;
+      z-index: 1;
+  }
+  #why-choose-emirates .cs-picture img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+  }
+  #why-choose-emirates .cs-quote {
+      width: clamp(3.875rem, 7vw, 6.25rem);
+      height: auto;
+      margin-bottom: -1.75rem;
+      opacity: .4;
+      position: relative;
+      z-index: -1;
+  }
+  #why-choose-emirates .cs-review {
+      --quoteColor: var(--primary);
+      font-size: clamp(1.25rem, 3vw, 1.5625rem);
+      line-height: 1.2em;
+      font-weight: 700;
+      width: 100%;
+      max-width: 32.625rem;
+      margin: 0;
+      color: var(--headerColor);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+  }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #why-choose-emirates .cs-container {
+      max-width: 80rem;
+      gap: 0;
+  }
+  #why-choose-emirates .cs-content {
+      padding-bottom: 6.25rem;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+  }
+  #why-choose-emirates .cs-flex {
+      text-align: left;
+      width: 40vw;
+      max-width: 39.375rem;
+      flex: none;
+  }
+  #why-choose-emirates .cs-title {
+      margin: 0;
+  }
+  #why-choose-emirates .cs-wrapper {
+      margin-top: calc(clamp(3.75rem, 10vw, 8.75rem)*-1);
+      flex-direction: row;
+      align-items: stretch;
+      justify-content: space-between;
+  }
+  #why-choose-emirates .cs-picture {
+      width: 43vw;
+      max-width: 39.375rem;
+      height: auto;
+      min-height: clamp(15.75rem, 30vw, 25.875rem);
+      max-height: 100%;
+      flex: none;
+  }
+  #why-choose-emirates .cs-review {
+      margin-top: clamp(6.25rem, 20vw, 14.5rem);
+      align-self: flex-end;
+  }
+}
+
+ /* Footer Styles */
+
+ footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.social-media {
+  display: flex;
+  gap: 10px;
+}
+
+.social-link {
+  color: #fff;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.contact-info p {
+  margin: 5px 0;
+}
