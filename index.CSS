@@ -142,7 +142,7 @@ nav {
 }
 
 .header__image.reveal {
-  background-image: url("images/emirates-image.jpg");
+  background-image: url("./images/Emirates-image.jpg");
 }
 
 .header__image.reveal::after {
